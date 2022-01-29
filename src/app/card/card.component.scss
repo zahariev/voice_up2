@@ -82,18 +82,14 @@
 
 .deck {
   all: unset;
-  //   border-radius: 12px;
   position: relative;
-  //   background-color: #465658;
-  //   background-size: cover;
   background-size: cover !important;
   background-repeat: no-repeat;
 
   height: 258px;
   width: 258px;
   margin: 10px 8px 16px;
-  //   padding: 16px;
-  display: flex;
+  //   display: flex;
   cursor: pointer;
   z-index: 0;
 }
