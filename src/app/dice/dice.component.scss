@@ -19,7 +19,7 @@
 }
 .result {
   position: relative;
-  top: calc(-7px + 4vw);
+  top: max(4vw, 50px);
   font-size: calc(22px + 1.5vw);
 }
 button {
