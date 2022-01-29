@@ -1,0 +1,46 @@
+footer a {
+  display: flex;
+  align-items: center;
+}
+
+.footer {
+  color: white !important;
+  bottom: 0px;
+  width: 100%;
+  min-height: 120px;
+  position: absolute;
+  z-index: 999;
+  align-items: center;
+  //   background-color: #899394;
+  background-color: #b3b3b3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+
+  .logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 115px;
+    min-height: 60px;
+    cursor: pointer;
+    z-index: 99999;
+  }
+
+  #logo_transformika {
+    // min-width: 170px;
+    background-image: url("logos/transformika.webp");
+  }
+
+  #logo_playcraft {
+    background-image: url("logos/playcraft.webp");
+  }
+
+  #logo_bo_yana {
+    min-width: 120px;
+    min-height: 45px;
+    margin-left: 60px;
+
+    background-image: url("https://ipos.bg/bo_yana_logo.png");
+  }
+}

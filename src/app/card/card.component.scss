@@ -1,0 +1,328 @@
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.tp-box {
+  width: 180px;
+  height: 258px;
+  margin: 10px;
+  position: static;
+}
+
+.card {
+  background-size: cover !important;
+  height: 250px;
+  width: 180px;
+  background-color: #465658;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  //   position: absolute;
+  position: static;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.container {
+  //   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // new
+  min-height: 250px;
+
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+  margin-top: 56px;
+}
+
+.deck-container {
+  min-height: 250px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  min-height: 250px;
+  .first-child {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.card-container .card:not(:last-child) {
+  margin-right: 0;
+}
+
+.clear {
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.deck {
+  all: unset;
+  border-radius: 12px;
+  position: relative;
+  //   background-color: #465658;
+  //   background-size: cover;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+
+  height: 217px;
+  width: 148px;
+  margin: 10px 8px 16px;
+  padding: 16px;
+  display: flex;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.leaveSelected {
+  position: fixed;
+  color: white;
+  top: 0px;
+  left: 55%;
+}
+
+.flipCard {
+  position: relative;
+  z-index: 999999;
+  top: 10px;
+  left: 10px;
+}
+
+.magnifyIcon {
+  position: relative;
+  z-index: 999999;
+  top: 10px;
+  left: 10px;
+}
+
+.flipIcon {
+  position: relative;
+  z-index: 999999;
+  top: -10px;
+  left: -10px;
+}
+
+.showDeckIcon {
+  display: none;
+  position: relative;
+  z-index: 999999;
+  top: -10px;
+  right: -73px;
+}
+
+.check {
+  color: white;
+  cursor: pointer;
+  position: relative;
+  z-index: 999999;
+  top: -24px;
+  //   left: -10px;
+}
+
+.middle {
+  color: black;
+  display: none;
+  position: absolute;
+  z-index: 999999;
+  top: 10px;
+  left: 44%;
+
+  cursor: pointer;
+}
+
+.delete {
+  color: black;
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 8%;
+
+  cursor: pointer;
+}
+
+.left {
+  color: black;
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.card:hover .delete,
+.card:hover .middle,
+.card:hover .flipIcon,
+.card:hover .magnifyIcon,
+.card:hover .flipCard,
+.deck:hover .showDeckIcon {
+  display: block;
+  opacity: 0.8;
+}
+
+.cardButtons {
+  left: 5px;
+  width: 97%;
+  position: relative;
+}
+
+.magnify {
+  height: 327px;
+  width: 238px;
+}
+
+.emptyDeck {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.deckTitle {
+  text-align: center;
+  top: 39%;
+  left: 0px;
+  padding: 8px;
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  width: 89%;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: black !important;
+}
+
+.checkDelete {
+  position: absolute;
+  bottom: 20px;
+  //   background-color: black !important;
+}
+
+.top10 {
+  margin-top: 10px;
+}
+
+.card-container {
+  margin-bottom: 185px !important;
+}
+
+@media screen and (max-width: 831px), screen and (max-height: 500px) {
+  .card-container {
+    margin-bottom: 185px !important;
+  }
+
+  .example-handle {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: rgb(121, 39, 39);
+    cursor: move;
+    width: 24px;
+    height: 24px;
+  }
+
+  .deck {
+    // left: 8%;
+    //????
+    height: 115px;
+    width: 72px;
+    border-radius: 8px;
+  }
+
+  .tp-box {
+    height: 148px;
+    width: 103px;
+  }
+
+  .card {
+    height: 140px;
+    width: 100px;
+    border-radius: 8px;
+  }
+
+  .leaveSelected {
+    left: 60% !important;
+  }
+
+  .magnify {
+    zoom: 2;
+    mat-icon {
+      zoom: 0.7;
+    }
+  }
+
+  .deck-container {
+    top: -10px;
+    min-height: 190px;
+  }
+
+  .cardButtons {
+    zoom: 0.75;
+  }
+
+  .emptyDeck {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  .flipIcon {
+    position: relative;
+    z-index: 999999;
+    top: -15px;
+    left: -15px;
+  }
+
+  .filterIcon {
+    right: 0px;
+  }
+
+  .showDeckIcon {
+    position: relative;
+    z-index: 999999;
+    top: -15px;
+    right: -5px;
+  }
+
+  .card-container,
+  .container {
+    width: 100%;
+  }
+
+  .container {
+    margin-top: 80px;
+  }
+
+  .deckTitle {
+    text-align: center;
+    top: 30%;
+    left: 0px;
+    padding: 5px;
+    position: absolute;
+    font-size: 14px;
+    width: 85%;
+  }
+}

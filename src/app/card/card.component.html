@@ -1,0 +1,115 @@
+<div
+  id="content"
+  #board
+  role="main"
+  [ngClass]="gs.minify || !gs.checkboxHide ? 'allBoard' : ''"
+>
+  <div class="container tp-wrapper" fxFlex>
+    <div class="card-container tp-wrapper top10">
+      <div
+        [style.color]="gs.getDeckColor(deck)"
+        class="deck"
+        (click)="gs.takeCard(deck)"
+        [ngClass]="deck.empty || gs.checkedIcons ? 'emptyDeck' : ''"
+        [style.background]="gs.getDeckBG(deck)"
+        *ngFor="let deck of gs.decks"
+      >
+        <button
+          mat-icon-button
+          class="showDeckIcon"
+          *ngIf="!gs.checkedIcons && !deck.empty"
+        >
+          <mat-icon
+            (click)="showAllCards(deck); $event.stopPropagation()"
+            [style.color]="gs.getDeckColor(deck)"
+            >apps
+          </mat-icon>
+        </button>
+
+        <span class="deckTitle" [style.color]="deck.color" *ngIf="deck.backSide"
+          >{{ deck.title }}
+        </span>
+      </div>
+
+      <div
+        class="tp-box"
+        *ngFor="let card of gs.cards"
+        cdkDrag
+        [cdkDragDisabled]="gs.selectionMode"
+        [cdkDragFreeDragPosition]="
+          card.position ? card.position : { x: 0, y: 0 }
+        "
+        (cdkDragStarted)="dragMove($event, card)"
+        (cdkDragEnded)="dragEnd($event, card)"
+        [style.position]="card.position ? 'absolute' : ''"
+        [id]="'card' + card.id"
+      >
+        <!-- {{ card.id }} -->
+        <div
+          [ngClass]="card.magnified ? 'magnify' : ''"
+          class="card"
+          (mousedown)="mouseDown($event)"
+          [style.background-image]="
+            'url(./assets/cards/' + card.id + (card.side || '') + '_Pictus.jpg)'
+          "
+        >
+          <div class="cardButtons" *ngIf="!gs.selectionMode && !dragEvent">
+            <!-- <mat-icon
+              [style.color]="gs.getIconColor(card)"
+              class="flipCard left"
+              (click)="gs.flipCard(card); $event.stopPropagation()"
+              >360
+              </mat-icon> -->
+            <mat-icon
+              class="magnifyIcon left material-icons"
+              [style.color]="gs.getIconColor(card)"
+              (click)="magnify($event, card); $event.stopPropagation()"
+            >
+              image_search
+            </mat-icon>
+            <mat-icon
+              class="delete"
+              (click)="gs.removeCard(card)"
+              [style.color]="gs.getIconColor(card)"
+              >delete
+            </mat-icon>
+          </div>
+
+          <div class="cardButtons" *ngIf="gs.selectionMode">
+            <!-- <mat-icon
+              [style.color]="gs.getIconColor(card)"
+              class="flipCard left"
+              (click)="gs.flipCard(card); $event.stopPropagation()"
+              >360
+            </mat-icon> -->
+          </div>
+          <div
+            *ngIf="isMobileDevice() && !gs.selectionMode"
+            class="example-handle"
+            cdkDragHandle
+          >
+            <svg
+              width="24px"
+              [style.color]="gs.getIconColor(card)"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+              ></path>
+              <path d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+          </div>
+
+          <mat-checkbox
+            *ngIf="gs.selectionMode"
+            class="check"
+            [checked]="card.checked"
+            [color]="gs.getIconColor(card)"
+            (change)="gs.checkToggleCard(card, $event.checked)"
+          >
+          </mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

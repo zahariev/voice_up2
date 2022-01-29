@@ -1,0 +1,32 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #465658;
+}
+
+.disable-text-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mat-checkbox-frame {
+  border-color: white;
+  opacity: 0.7;
+}
