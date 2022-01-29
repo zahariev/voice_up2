@@ -15,6 +15,10 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: #465658;
+  background-image: url("./assets/cards/main_bg.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .disable-text-selection {

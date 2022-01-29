@@ -50,7 +50,10 @@
           class="card"
           (mousedown)="mouseDown($event)"
           [style.background-image]="
-            'url(./assets/cards/' + card.id + (card.side || '') + '_Pictus.jpg)'
+            'url(./assets/cards/' +
+            card.id +
+            (card.side || '') +
+            '-voce-up.png)'
           "
         >
           <div class="cardButtons" *ngIf="!gs.selectionMode && !dragEvent">
