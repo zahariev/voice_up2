@@ -10,13 +10,17 @@
 .center {
   opacity: 0.7;
   text-align: center;
-  width: 15vw;
-  height: 20vw;
+  width: 8vw;
+  height: 10vw;
+  max-height: 80px;
+  max-width: 60px;
+  min-width: 40px;
+  min-height: 60px;
 }
 .result {
   position: relative;
-  top: 9vw;
-  font-size: 18vw;
+  top: calc(-7px + 4vw);
+  font-size: calc(22px + 1.5vw);
 }
 button {
   min-width: 65px;
