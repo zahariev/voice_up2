@@ -1,50 +1,66 @@
 <div class="toolbar" fxFlex fxLayout="row">
-  <button [disabled]="gs.selectionMode" mat-button (click)="showAllCards()">
-    <mat-icon>apps</mat-icon>
-
-    <span class="btnText">{{ TEXT.SHOW_ALL }}</span>
+  <!-- comment for toolbar -->
+  <button
+    id="menu"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>menu</mat-icon>
   </button>
+  <mat-menu #menu="matMenu">
+    <!-- comment till here-->
 
-  <button [disabled]="gs.selectionMode" mat-button (click)="resetGame()">
-    <mat-icon>clear</mat-icon>
+    <button [disabled]="gs.selectionMode" mat-button (click)="showAllCards()">
+      <mat-icon>apps</mat-icon>
 
-    <span class="btnText">{{ TEXT.CLEAR_BOARD }}</span>
-  </button>
-
-  <button mat-button (click)="positionReset()">
-    <mat-icon>restart_alt</mat-icon>
-    <span class="btnText">{{ TEXT.POSITION_RESET }}</span>
-  </button>
-
-  <button mat-button (click)="toggleZoom()">
-    <mat-icon [style.color]="'white'" *ngIf="gs.minify">zoom_in</mat-icon>
-
-    <mat-icon [style.color]="'white'" *ngIf="!gs.minify">zoom_out</mat-icon>
-    <span class="btnText">{{ TEXT.ZOOM }} </span>
-  </button>
-
-  <button mat-button (click)="enableSelect()" *ngIf="gs.cards.length">
-    <mat-icon [style.color]="'white'">library_add_check</mat-icon>
-
-    <span class="btnText" *ngIf="gs.selectionMode"
-      >{{ TEXT.CANCEL_SELECT }}
-    </span>
-    <span class="btnText" *ngIf="!gs.selectionMode">{{ TEXT.SELECT }} </span>
-  </button>
-  <div id="addedBtns">
-    <button
-      mat-button
-      *ngIf="gs.selectionMode"
-      (click)="toggleSelectionCards()"
-    >
-      <mat-icon *ngIf="!gs.allSelected">check_box_outline_blank</mat-icon>
-      <mat-icon *ngIf="gs.allSelected">check_box</mat-icon>
-      <span>{{ TEXT.SELECT_ALL }}</span>
+      <span class="btnText">{{ TEXT.SHOW_ALL }}</span>
     </button>
 
-    <button mat-button *ngIf="gs.checkedIcons" (click)="filterSelected()">
-      <mat-icon [style.color]="'green'">done</mat-icon>
-      <span>{{ TEXT.SELECT_CARDS }}</span>
+    <button [disabled]="gs.selectionMode" mat-button (click)="resetGame()">
+      <mat-icon>clear</mat-icon>
+
+      <span class="btnText">{{ TEXT.CLEAR_BOARD }}</span>
     </button>
-  </div>
+
+    <button mat-button (click)="positionReset()">
+      <mat-icon>restart_alt</mat-icon>
+      <span class="btnText">{{ TEXT.POSITION_RESET }}</span>
+    </button>
+
+    <button mat-button (click)="toggleZoom()">
+      <mat-icon [style.color]="'white'" *ngIf="gs.minify">zoom_in</mat-icon>
+
+      <mat-icon [style.color]="'white'" *ngIf="!gs.minify">zoom_out</mat-icon>
+      <span class="btnText">{{ TEXT.ZOOM }} </span>
+    </button>
+
+    <button mat-button (click)="enableSelect()" *ngIf="gs.cards.length">
+      <mat-icon [style.color]="'white'">library_add_check</mat-icon>
+
+      <span class="btnText" *ngIf="gs.selectionMode"
+        >{{ TEXT.CANCEL_SELECT }}
+      </span>
+      <span class="btnText" *ngIf="!gs.selectionMode">{{ TEXT.SELECT }} </span>
+    </button>
+    <div id="addedBtns">
+      <button
+        mat-button
+        *ngIf="gs.selectionMode"
+        (click)="toggleSelectionCards()"
+      >
+        <mat-icon *ngIf="!gs.allSelected">check_box_outline_blank</mat-icon>
+        <mat-icon *ngIf="gs.allSelected">check_box</mat-icon>
+        <span>{{ TEXT.SELECT_ALL }}</span>
+      </button>
+
+      <button mat-button *ngIf="gs.checkedIcons" (click)="filterSelected()">
+        <mat-icon [style.color]="'green'">done</mat-icon>
+        <span>{{ TEXT.SELECT_CARDS }}</span>
+      </button>
+    </div>
+
+    <!-- comment for toolbar -->
+  </mat-menu>
+  <!-- comment -->
 </div>

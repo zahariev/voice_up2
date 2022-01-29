@@ -1,0 +1,23 @@
+:host {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.title {
+  position: absolute;
+  font-size: 3vw;
+}
+.center {
+  opacity: 0.7;
+  text-align: center;
+  width: 15vw;
+  height: 20vw;
+}
+.result {
+  position: relative;
+  top: 9vw;
+  font-size: 18vw;
+}
+button {
+  min-width: 65px;
+}

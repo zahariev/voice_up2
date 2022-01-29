@@ -1,0 +1,11 @@
+<button mat-raised-button (click)="start()">
+  <div class="center">
+    <!-- <ng-template #roll> -->
+    <div class="title center" [style.font-size.px]="15">Click to Roll !</div>
+    <!-- </ng-template> -->
+
+    <div *ngIf="roller$ | async as result" class="result">
+      {{ result }}
+    </div>
+  </div>
+</button>
