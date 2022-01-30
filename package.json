@@ -1,6 +1,6 @@
 {
-  "name": "yoco",
-  "version": "0.0.0",
+  "name": "voice-up",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4206",
