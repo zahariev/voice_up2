@@ -36,7 +36,9 @@ export class DiceComponent implements AfterViewInit {
     })
   );
 
-  constructor() {}
+  constructor() {
+    this.start();
+  }
 
   emitDiceNum(num: number) {
     clearTimeout(this.emitTimer);

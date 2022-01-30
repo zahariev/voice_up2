@@ -3,6 +3,11 @@
   right: 20px;
   top: 20px;
 }
+
+#dice {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .title {
   position: absolute;
   font-size: 3vw;
@@ -23,5 +28,6 @@
   font-size: calc(22px + 1.5vw);
 }
 button {
-  min-width: 65px;
+  width: 92px;
+  height: 92px;
 }

@@ -1,11 +1,16 @@
-<button mat-raised-button (click)="start()">
+<button
+  mat-raised-button
+  (click)="start()"
+  id="dice"
+  [style.background-image]="
+    'url(\'../../assets/dice/dice' + (roller$ | async) + '.svg\')'
+  "
+>
   <div class="center">
-    <!-- <ng-template #roll> -->
-    <div class="title center" [style.font-size.px]="15">Click to Roll !</div>
-    <!-- </ng-template> -->
+    <!-- <div class="title center" [style.font-size.px]="15">Click to Roll !</div> -->
 
-    <div *ngIf="roller$ | async as result" class="result">
+    <!-- <div *ngIf="roller$ | async as result" class="result">
       {{ result }}
-    </div>
+    </div> -->
   </div>
 </button>
