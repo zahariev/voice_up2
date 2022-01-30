@@ -180,14 +180,15 @@
 }
 
 .cardButtons {
-  left: 5px;
-  width: 97%;
+  left: 15%;
+  top: 10%;
+  width: 77%;
   position: relative;
 }
 
 .magnify {
   height: 327px;
-  width: 238px;
+  width: 327px;
 }
 
 .emptyDeck {
@@ -230,10 +231,10 @@
     margin-bottom: 185px !important;
   }
 
-  .example-handle {
+  .drag-handle {
     display: block;
     position: absolute;
-    bottom: 10px;
+    top: 55px;
     right: 10px;
     color: rgb(121, 39, 39);
     cursor: move;
@@ -244,20 +245,20 @@
   .deck {
     // left: 8%;
     //????
-    height: 115px;
-    width: 72px;
-    border-radius: 8px;
+    height: 145px;
+    width: 145px;
+    border-radius: 50%;
   }
 
   .tp-box {
     height: 148px;
-    width: 103px;
+    width: 148px;
   }
 
   .card {
     height: 140px;
-    width: 100px;
-    border-radius: 8px;
+    width: 140px;
+    border-radius: 50%;
   }
 
   .leaveSelected {
