@@ -9,7 +9,7 @@ import { MatListModule } from "@angular/material/list";
 import { AppComponent } from "./app.component";
 import { CardComponent } from "./card/card.component";
 import { MatCheckboxModule } from "@angular/material/checkbox";
-import { FooterComponent } from "./footer/footer.component";
+// import { FooterComponent } from "./footer/footer.component";
 import { MenuComponent } from "./menu/menu.component";
 import { DiceComponent } from "./dice/dice.component";
 
@@ -17,7 +17,7 @@ import { DiceComponent } from "./dice/dice.component";
   declarations: [
     AppComponent,
     CardComponent,
-    FooterComponent,
+    // FooterComponent,
     MenuComponent,
     DiceComponent,
   ],
