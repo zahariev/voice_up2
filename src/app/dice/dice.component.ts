@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from "@angular/core";
-import { map, Subject, switchMap, take, timer } from "rxjs";
+import { BehaviorSubject, map, Subject, switchMap, take, timer } from "rxjs";
 
 @Component({
   selector: "app-dice",
@@ -18,7 +18,7 @@ export class DiceComponent implements AfterViewInit {
   rolling = false;
   selectedRollCount = 1;
   selectedType = 4;
-  start$ = new Subject();
+  start$ = new BehaviorSubject(0);
   emitTimer!: any;
   roller$ = this.start$.pipe(
     switchMap((max) => {
@@ -36,9 +36,7 @@ export class DiceComponent implements AfterViewInit {
     })
   );
 
-  constructor() {
-    this.start();
-  }
+  constructor() {}
 
   emitDiceNum(num: number) {
     clearTimeout(this.emitTimer);

@@ -1,11 +1,14 @@
 .toolbar {
-  color: white !important;
+  color: rgb(66, 60, 60) !important;
   width: 44px;
+  //   left: 49%;
   position: fixed;
   z-index: 999999999;
   align-items: center;
-  //   background-color: #899394;
+  border-radius: 8px 0px;
+  //   background-color: #063f44bd;  #465658
   background-color: #b3b3b3;
+  background-color: #465658;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -14,8 +17,8 @@
 
 #menu {
   position: absolute;
-  top: 0;
-  left: 0;
+  //   top: 0;
+  //   left: 0;
 
   width: 40px;
   height: 40px;

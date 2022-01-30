@@ -2,15 +2,16 @@
   mat-raised-button
   (click)="start()"
   id="dice"
+  *ngIf="selectedType < 6"
+  [style.background-image]="'url(\'../../assets/dice/dice0.svg\')'"
+></button>
+
+<button
+  mat-raised-button
+  (click)="start()"
+  id="dice"
+  *ngIf="selectedType > 4"
   [style.background-image]="
     'url(\'../../assets/dice/dice' + (roller$ | async) + '.svg\')'
   "
->
-  <div class="center">
-    <!-- <div class="title center" [style.font-size.px]="15">Click to Roll !</div> -->
-
-    <!-- <div *ngIf="roller$ | async as result" class="result">
-      {{ result }}
-    </div> -->
-  </div>
-</button>
+></button>
