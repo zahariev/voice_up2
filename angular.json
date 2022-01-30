@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/voice",
+            "outputPath": "dist/voice-up",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "voice:build:production"
+              "browserTarget": "voice-up:build:production"
             },
             "development": {
-              "browserTarget": "voice:build:development"
+              "browserTarget": "voice-up:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,5 +103,5 @@
       }
     }
   },
-  "defaultProject": "voice"
+  "defaultProject": "voice-up"
 }
