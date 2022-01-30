@@ -234,8 +234,8 @@
   .drag-handle {
     display: block;
     position: absolute;
-    top: 55px;
-    right: 10px;
+    top: 50%;
+    right: 10%;
     color: rgb(121, 39, 39);
     cursor: move;
     width: 24px;
@@ -304,12 +304,11 @@
     right: -5px;
   }
 
-  .card-container,
-  .container {
+  .card-container {
     width: 100%;
   }
-
   .container {
+    width: 30%;
     margin-top: 80px;
   }
 

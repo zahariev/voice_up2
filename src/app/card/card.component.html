@@ -6,31 +6,34 @@
 >
   <div class="container tp-wrapper" fxFlex>
     <div class="card-container tp-wrapper top10">
-      <div
-        [style.color]="gs.getDeckColor(deck)"
-        class="deck"
-        (click)="gs.takeCard(deck)"
-        [ngClass]="deck.empty || gs.checkedIcons ? 'emptyDeck' : ''"
-        [style.background]="gs.getDeckBG(deck)"
-        *ngFor="let deck of gs.decks"
-      >
-        <button
-          mat-icon-button
-          class="showDeckIcon"
-          *ngIf="!gs.checkedIcons && !deck.empty"
+      <div *ngFor="let deck of gs.decks" class="tp-box">
+        <div
+          class="card"
+          [style.color]="gs.getDeckColor(deck)"
+          (click)="gs.takeCard(deck)"
+          [ngClass]="deck.empty || gs.checkedIcons ? 'emptyDeck' : ''"
+          [style.background]="gs.getDeckBG(deck)"
         >
-          <mat-icon
-            (click)="showAllCards(deck); $event.stopPropagation()"
-            [style.color]="gs.getDeckColor(deck)"
-            >apps
-          </mat-icon>
-        </button>
+          <button
+            mat-icon-button
+            class="showDeckIcon"
+            *ngIf="!gs.checkedIcons && !deck.empty"
+          >
+            <mat-icon
+              (click)="showAllCards(deck); $event.stopPropagation()"
+              [style.color]="gs.getDeckColor(deck)"
+              >apps
+            </mat-icon>
+          </button>
 
-        <span class="deckTitle" [style.color]="deck.color" *ngIf="deck.backSide"
-          >{{ deck.title }}
-        </span>
+          <span
+            class="deckTitle"
+            [style.color]="deck.color"
+            *ngIf="deck.backSide"
+            >{{ deck.title }}
+          </span>
+        </div>
       </div>
-
       <div
         class="tp-box"
         *ngFor="let card of gs.cards"
