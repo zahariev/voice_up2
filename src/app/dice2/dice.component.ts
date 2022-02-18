@@ -30,9 +30,6 @@ export class DiceComponent implements OnInit {
         take(2),
         map((_) => {
           var randNum = this.getRandomInt(1, 7);
-          while (this.lastRoll === "show-" + randNum) {
-            randNum = this.getRandomInt(1, 7);
-          }
 
           return randNum;
         })
