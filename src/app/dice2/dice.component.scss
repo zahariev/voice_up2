@@ -41,16 +41,6 @@
   perspective: 600px;
 }
 
-.rollBtn {
-  background: black;
-  color: white;
-  border: none;
-  margin: auto 0;
-  font-size: 1.5em;
-  margin-top: 1em;
-  width: 200px;
-}
-
 .cube {
   width: 200px;
   height: 200px;
@@ -127,4 +117,37 @@
 
 label {
   margin-right: 10px;
+}
+
+@media screen and (max-width: 831px), screen and (max-height: 500px) {
+  .box {
+    top: 30%;
+    left: 25%;
+  }
+
+  .cube,
+  .cube__face,
+  .scene {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cube__face--1 {
+    transform: rotateY(0deg) translateZ(50px);
+  }
+  .cube__face--2 {
+    transform: rotateY(180deg) translateZ(50px);
+  }
+  .cube__face--3 {
+    transform: rotateY(90deg) translateZ(50px);
+  }
+  .cube__face--4 {
+    transform: rotateY(-90deg) translateZ(50px);
+  }
+  .cube__face--5 {
+    transform: rotateX(90deg) translateZ(50px);
+  }
+  .cube__face--6 {
+    transform: rotateX(-90deg) translateZ(50px);
+  }
 }
