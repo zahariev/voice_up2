@@ -10,6 +10,17 @@
   position: static;
 }
 
+.deckButton {
+  position: relative;
+  background-image: url("../../assets/cards/deck_1.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 35%;
+  border-radius: 50%;
+  width: 30%;
+  height: 30%;
+}
+
 .card {
   background-size: cover !important;
   height: 250px;
@@ -83,8 +94,8 @@
 .deck {
   all: unset;
   position: relative;
-  background-size: cover !important;
-  background-repeat: no-repeat;
+  //   background-size: cover !important;
+  //   background-repeat: no-repeat;
 
   height: 258px;
   width: 258px;

@@ -26,10 +26,10 @@ export class AppComponent {
 
   diceChange(diceNum: number): void {
     if (diceNum === 0) return;
-    this.renderer.setStyle(
-      document.body,
-      "background-color",
-      this.diceNum[diceNum]
-    );
+    // this.renderer.setStyle(
+    //   document.body,
+    //   "background-color",
+    //   this.diceNum[diceNum]
+    // );
   }
 }

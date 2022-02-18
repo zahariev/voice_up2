@@ -11,7 +11,7 @@ import { CardComponent } from "./card/card.component";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 // import { FooterComponent } from "./footer/footer.component";
 import { MenuComponent } from "./menu/menu.component";
-import { DiceComponent } from "./dice/dice.component";
+import { DiceComponent } from "./dice2/dice.component";
 
 @NgModule({
   declarations: [

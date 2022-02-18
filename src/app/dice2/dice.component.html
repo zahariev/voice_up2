@@ -1,0 +1,17 @@
+<button
+  mat-raised-button
+  (click)="start()"
+  id="dice"
+  *ngIf="selectedType < 6"
+  [style.background-image]="'url(\'assets/dice/dice0.svg\')'"
+></button>
+
+<button
+  mat-raised-button
+  (click)="start()"
+  id="dice"
+  *ngIf="selectedType > 4"
+  [style.background-image]="
+    'url(\'assets/dice/dice' + (roller$ | async) + '.svg\')'
+  "
+></button>

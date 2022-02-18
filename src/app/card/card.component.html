@@ -8,30 +8,23 @@
     <div class="card-container tp-wrapper top10">
       <div *ngFor="let deck of gs.decks" class="tp-box">
         <div
-          class="card"
-          [style.color]="gs.getDeckColor(deck)"
-          (click)="gs.takeCard(deck)"
+          class="card box"
           [ngClass]="deck.empty || gs.checkedIcons ? 'emptyDeck' : ''"
-          [style.background]="gs.getDeckBG(deck)"
         >
+          <!-- [style.color]="gs.getDeckColor(deck)"
+            [style.background]="gs.getDeckBG(deck)" -->
           <button
             mat-icon-button
-            class="showDeckIcon"
-            *ngIf="!gs.checkedIcons && !deck.empty"
-          >
-            <mat-icon
-              (click)="showAllCards(deck); $event.stopPropagation()"
-              [style.color]="gs.getDeckColor(deck)"
-              >apps
-            </mat-icon>
-          </button>
+            class="deckButton"
+            (click)="gs.takeCard(deck)"
+          ></button>
 
-          <span
+          <!-- <span
             class="deckTitle"
             [style.color]="deck.color"
             *ngIf="deck.backSide"
             >{{ deck.title }}
-          </span>
+          </span> -->
         </div>
       </div>
       <div
