@@ -15,20 +15,11 @@
           class="card box"
           [ngClass]="deck.empty || gs.checkedIcons ? 'emptyDeck' : ''"
         >
-          <!-- [style.color]="gs.getDeckColor(deck)"
-            [style.background]="gs.getDeckBG(deck)" -->
           <button
             mat-icon-button
             class="deckButton"
             (click)="gs.takeCard(deck)"
           ></button>
-
-          <!-- <span
-            class="deckTitle"
-            [style.color]="deck.color"
-            *ngIf="deck.backSide"
-            >{{ deck.title }}
-          </span> -->
         </div>
       </div>
       <div
@@ -57,12 +48,6 @@
           "
         >
           <div class="cardButtons" *ngIf="!gs.selectionMode && !dragEvent">
-            <!-- <mat-icon
-              [style.color]="gs.getIconColor(card)"
-              class="flipCard left"
-              (click)="gs.flipCard(card); $event.stopPropagation()"
-              >360
-              </mat-icon> -->
             <mat-icon
               class="magnifyIcon left material-icons"
               [style.color]="gs.getIconColor(card)"
@@ -78,14 +63,7 @@
             </mat-icon>
           </div>
 
-          <div class="cardButtons" *ngIf="gs.selectionMode">
-            <!-- <mat-icon
-              [style.color]="gs.getIconColor(card)"
-              class="flipCard left"
-              (click)="gs.flipCard(card); $event.stopPropagation()"
-              >360
-            </mat-icon> -->
-          </div>
+          <div class="cardButtons" *ngIf="gs.selectionMode"></div>
           <div
             *ngIf="isMobileDevice() && !gs.selectionMode"
             class="drag-handle"
