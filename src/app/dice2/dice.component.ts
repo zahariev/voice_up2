@@ -1,10 +1,11 @@
 import { Time } from "@angular/common";
 import {
-  AfterViewInit,
   Component,
+  ElementRef,
   EventEmitter,
   OnInit,
   Output,
+  ViewChild,
 } from "@angular/core";
 import { BehaviorSubject, map, Subject, switchMap, take, timer } from "rxjs";
 
@@ -13,8 +14,11 @@ import { BehaviorSubject, map, Subject, switchMap, take, timer } from "rxjs";
   templateUrl: "./dice.component.html",
   styleUrls: ["./dice.component.scss"],
 })
-export class DiceComponent implements AfterViewInit {
+export class DiceComponent implements OnInit {
   @Output() diceNum = new EventEmitter<number>();
+  @ViewChild("dice") dice!: ElementRef<HTMLElement>;
+
+  lastRoll = "";
   rolling = false;
   selectedRollCount = 1;
   selectedType = 4;
@@ -22,15 +26,15 @@ export class DiceComponent implements AfterViewInit {
   emitTimer!: any;
   roller$ = this.start$.pipe(
     switchMap((max) => {
-      return timer(0, 50).pipe(
-        take(10),
+      return timer(0, 150).pipe(
+        take(2),
         map((_) => {
-          let total = 0;
-          for (let i = 0; i < this.selectedRollCount; i++) {
-            total += this.calcRoll(6);
+          var randNum = this.getRandomInt(1, 7);
+          while (this.lastRoll === "show-" + randNum) {
+            randNum = this.getRandomInt(1, 7);
           }
-          this.emitDiceNum(total);
-          return total;
+
+          return randNum;
         })
       );
     })
@@ -38,25 +42,25 @@ export class DiceComponent implements AfterViewInit {
 
   constructor() {}
 
-  emitDiceNum(num: number) {
-    clearTimeout(this.emitTimer);
-    this.emitTimer = setTimeout(() => {
-      this.diceNum.emit(num);
-    }, 300);
+  ngOnInit() {
+    this.roller$.subscribe((roll) => {
+      var showClass = "show-" + roll;
+      console.log(this.lastRoll);
+      if (this.lastRoll)
+        this.dice.nativeElement.classList.remove(this.lastRoll);
+
+      this.lastRoll = showClass;
+      this.dice.nativeElement.classList.add(showClass);
+    });
   }
 
-  ngAfterViewInit(): void {
-    // this.start();
-  }
-
-  calcRoll(max: number) {
-    const min = 1;
-    return Number((Math.random() * (max - min) + min).toFixed(0));
-  }
-
-  start() {
-    this.diceNum.emit(0);
-    this.selectedType = 6;
+  async roll() {
     this.start$.next(1);
+  }
+
+  getRandomInt(min: number, max: number): number {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
   }
 }

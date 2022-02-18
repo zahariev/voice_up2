@@ -29,6 +29,8 @@ export class DiceComponent implements AfterViewInit {
           for (let i = 0; i < this.selectedRollCount; i++) {
             total += this.calcRoll(6);
           }
+          console.log(total);
+
           this.emitDiceNum(total);
           return total;
         })
@@ -58,5 +60,8 @@ export class DiceComponent implements AfterViewInit {
     this.diceNum.emit(0);
     this.selectedType = 6;
     this.start$.next(1);
+    this.roller$.subscribe((roll) => {
+      console.log(roll);
+    });
   }
 }
