@@ -6,11 +6,7 @@
 >
   <div class="container tp-wrapper" fxFlex>
     <div class="card-container tp-wrapper top10">
-      <div
-        *ngFor="let deck of gs.decks"
-        class="tp-box"
-        style="position: absolute"
-      >
+      <div *ngFor="let deck of gs.decks" style="position: absolute">
         <div
           class="card box"
           [ngClass]="deck.empty || gs.checkedIcons ? 'emptyDeck' : ''"

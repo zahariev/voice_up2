@@ -8,6 +8,7 @@
   height: 258px;
   margin: 10px;
   position: static;
+  z-index: 0;
 }
 
 .deckButton {
@@ -37,7 +38,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  z-index: 1;
+  //   z-index: 1;
 }
 
 .container {
@@ -47,8 +48,8 @@
 
   width: 28%;
   height: 100%;
-  margin-top: 40px;
-  margin-top: 56px;
+  margin-top: 35px;
+  margin-left: 10px;
 }
 
 .deck-container {

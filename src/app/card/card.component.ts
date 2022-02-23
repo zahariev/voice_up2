@@ -24,7 +24,7 @@ export class CardComponent implements OnInit {
   windowHeight: number = window.innerHeight;
   TEXT = texts;
   mousePosition = { x: 0, y: 0 };
-  lastZindex = 0;
+  lastZindex = 100;
   dragEvent = false;
 
   constructor(public gs: GameService, private titleService: Title) {
