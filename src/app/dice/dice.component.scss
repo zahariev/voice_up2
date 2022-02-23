@@ -5,15 +5,15 @@
 }
 
 .scene {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   margin: 20px;
   perspective: 600px;
 }
 
 .cube {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
@@ -49,10 +49,10 @@
 .cube__face {
   border-radius: 10%;
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border: 2px solid black;
-  line-height: 150px;
+  line-height: 100px;
   font-size: 40px;
   font-weight: bold;
   color: white;
@@ -61,27 +61,27 @@
 }
 
 .cube__face--1 {
-  transform: rotateY(0deg) translateZ(75px);
+  transform: rotateY(0deg) translateZ(50px);
   background-image: url("../../assets/dice/dice1.svg");
 }
 .cube__face--2 {
-  transform: rotateY(180deg) translateZ(75px);
+  transform: rotateY(180deg) translateZ(50px);
   background-image: url("../../assets/dice/dice2.svg");
 }
 .cube__face--3 {
-  transform: rotateY(90deg) translateZ(75px);
+  transform: rotateY(90deg) translateZ(50px);
   background-image: url("../../assets/dice/dice3.svg");
 }
 .cube__face--4 {
-  transform: rotateY(-90deg) translateZ(75px);
+  transform: rotateY(-90deg) translateZ(50px);
   background-image: url("../../assets/dice/dice4.svg");
 }
 .cube__face--5 {
-  transform: rotateX(90deg) translateZ(75px);
+  transform: rotateX(90deg) translateZ(50px);
   background-image: url("../../assets/dice/dice5.svg");
 }
 .cube__face--6 {
-  transform: rotateX(-90deg) translateZ(75px);
+  transform: rotateX(-90deg) translateZ(50px);
   background-image: url("../../assets/dice/dice6.svg");
 }
 
