@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, HostListener, Input, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 
 import { Subject } from "rxjs";
@@ -13,6 +13,11 @@ import texts from "../../assets/translation.json";
 })
 export class CardComponent implements OnInit {
   private componentDestroyed$: Subject<any> = new Subject<void>();
+  _shake = false;
+  @Input() set shake(value: boolean) {
+    this._shake = value;
+    console.log(this._shake);
+  }
 
   @HostListener("window:resize", ["$event"])
   onResize(event: Event): void {

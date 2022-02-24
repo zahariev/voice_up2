@@ -1,6 +1,12 @@
-import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Renderer2,
+  ViewChild,
+} from "@angular/core";
 
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject, Subject, timeout } from "rxjs";
 import { GameService } from "./game.service";
 
 enum diceNumbers {
@@ -19,8 +25,19 @@ enum diceNumbers {
 })
 export class AppComponent {
   @ViewChild("board") board!: ElementRef;
+  @HostListener("document:mousemove", ["$event"])
+  onMouseMove(e: Event) {
+    this.shake = true;
+    if (this.timeout) clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.shake = false;
+    }, 1000);
+  }
+
+  timeout: any;
   diceNum = diceNumbers;
   marginTop = 0;
+  shake = false;
 
   constructor(public gs: GameService, private renderer: Renderer2) {}
 

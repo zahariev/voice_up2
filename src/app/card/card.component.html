@@ -13,6 +13,7 @@
         >
           <button
             mat-icon-button
+            [ngClass]="_shake ? 'shake' : ''"
             class="deckButton"
             (click)="gs.takeCard(deck)"
           ></button>
