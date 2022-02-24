@@ -16,7 +16,6 @@ export class CardComponent implements OnInit {
   _shake = false;
   @Input() set shake(value: boolean) {
     this._shake = value;
-    console.log(this._shake);
   }
 
   @HostListener("window:resize", ["$event"])

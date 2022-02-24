@@ -42,7 +42,6 @@ export class DiceComponent implements OnInit {
   ngOnInit() {
     this.roller$.subscribe((roll) => {
       var showClass = "show-" + roll;
-      console.log(this.lastRoll);
       if (this.lastRoll)
         this.dice.nativeElement.classList.remove(this.lastRoll);
 
