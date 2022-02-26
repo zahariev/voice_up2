@@ -24,9 +24,9 @@
 
 .card {
   background-size: cover !important;
-  height: 250px;
-  width: 250px;
-  background-color: #465658;
+  height: 182px;
+  width: 182px;
+  background-color: white;
 
   position: static;
   border-radius: 50%;
@@ -203,7 +203,6 @@
 .emptyDeck {
   cursor: default;
   pointer-events: none;
-  opacity: 0.6;
 }
 
 .deckTitle {
